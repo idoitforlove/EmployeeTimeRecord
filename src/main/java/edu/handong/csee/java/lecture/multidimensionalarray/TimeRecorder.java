@@ -55,14 +55,13 @@ public class TimeRecorder {
 		
 		for(WeekDays currentDay:WeekDays.values()) {
 			
-			dayHours[currentDay.ordinal()] = 0;
-			
 			for(int employeeCount=0; employeeCount < hours.length; employeeCount++) {	
 				
-				weekHours[employeeCount] = 0;
+				dayHours[currentDay.ordinal()] = 0;
 				dayHours[currentDay.ordinal()] = dayHours[currentDay.ordinal()] 
 															+ hours[employeeCount][currentDay.ordinal()];
 			
+				weekHours[employeeCount] = 0; //default value
 				weekHours[employeeCount] = weekHours[employeeCount] 
 						+ hours[employeeCount][currentDay.ordinal()];
 			}
